@@ -30,11 +30,11 @@ export function ResultPage({ navigation, route }) {
 
             <View >
                 <View style={style.resultContainerAll}>
-                    <ResultComponent result={checked ? baseValue * 5 : baseValue} title={"Base"} />
-                    <ResultComponent result={checked ? ageResult * 5 : ageResult} title={"Por idade"} />
-                    <ResultComponent result={checked ? yearResult * 5 : yearResult} title={"Por ano"} />
+                    <ResultComponent checked={checked} result={baseValue} title={"Base"} />
+                    <ResultComponent checked={checked} result={ageResult} title={"Por idade"} />
+                    <ResultComponent checked={checked} result={yearResult} title={"Por ano"} />
                 </View>
-                <ResultComponent title={"Total"} result={checked ? total * 5 : total} />
+                <ResultComponent checked={checked} title={"Total"} result={total} />
             </View>
 
 
@@ -59,11 +59,14 @@ export function ResultPage({ navigation, route }) {
     )
 }
 
-function ResultComponent({ title, result }) {
+function ResultComponent({ title, result, checked }) {
+
+    const resultText = checked ? `$ ${result / 5}` : `R$ ${result}`
+
     return (
         <View style={style.resultContainer}>
             <Text style={style.titleResult}>{title}</Text>
-            <Text style={style.titleResult}>R$ {result}</Text>
+            <Text style={style.titleResult}>{resultText}</Text>
         </View>
     )
 }
