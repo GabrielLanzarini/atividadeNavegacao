@@ -33,9 +33,9 @@ export function RegisterSecondPage({ navigation, route }) {
             </Text>
 
             <View style={style.inputContainer}>
-                <DefaultInput setter={setCarInfo} id="car" name="Qual o seu carro?" />
-                <DefaultInput setter={setCarInfo} id="carValue" name="Qual o valor do seu carro?" />
-                <DefaultInput setter={setCarInfo} id="year" name="Qual o ano do seu carro?" />
+                <DefaultInput value={carInfo} setter={setCarInfo} id="car" name="Qual o seu carro?" />
+                <DefaultInput value={carInfo} setter={setCarInfo} id="carValue" name="Qual o valor do seu carro?" />
+                <DefaultInput value={carInfo} setter={setCarInfo} id="year" name="Qual o ano do seu carro?" />
             </View>
 
             <DefaultButton clickHandler={nextPage} buttonText="Próximo" />

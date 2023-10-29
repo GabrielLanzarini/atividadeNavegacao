@@ -7,7 +7,7 @@ import { TouchableOpacity } from "react-native";
 import { useState } from "react";
 
 
-export function Home({ navigation, route }) {
+export function Home({ navigation }) {
     const [values, setValues] = useState({ user: "", password: "" })
 
     const agePageNavigate = () => navigation.navigate("registerFirstPage", { ...values })
@@ -19,8 +19,8 @@ export function Home({ navigation, route }) {
             </Text>
 
             <View style={style.inputContainer}>
-                <DefaultInput setter={setValues} id="user" name="Usuário" />
-                <DefaultInput setter={setValues} id="password" name="Senha" />
+                <DefaultInput value={values} setter={setValues} id="user" name="Usuário" />
+                <DefaultInput value={values} setter={setValues} id="password" name="Senha" />
             </View>
 
             <DefaultButton clickHandler={agePageNavigate} buttonText="Logar" />

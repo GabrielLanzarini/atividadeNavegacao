@@ -27,7 +27,7 @@ export function RegisterFirstPage({ navigation, route }) {
             </Text>
 
             <View style={style.inputContainer}>
-                <DefaultInput setter={setAge} id="age" name="Qual a sua idade?" />
+                <DefaultInput value={age} setter={setAge} id="age" name="Qual a sua idade?" />
             </View>
 
             <DefaultButton clickHandler={nextPage} buttonText="Próximo" />
