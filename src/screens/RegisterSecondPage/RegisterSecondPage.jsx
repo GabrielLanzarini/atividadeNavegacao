@@ -12,12 +12,13 @@ export function RegisterSecondPage({ navigation, route }) {
     const { user, age } = route.params
     console.log(route.params);
 
-    const [carInfo, setCarInfo] = useState({ car: "", year: "" })
+    const [carInfo, setCarInfo] = useState({ car: "", year: "", carValue: "" })
+
 
     const returnPage = () => navigation.goBack()
     const nextPage = () => {
         const { car } = carInfo
-        const result = generateSecurity(age, carInfo.year)
+        const result = generateSecurity(age, carInfo.year, carInfo.carValue)
         navigation.navigate("result", { ...route.params, ...carInfo, ...result })
     }
 
@@ -33,6 +34,7 @@ export function RegisterSecondPage({ navigation, route }) {
 
             <View style={style.inputContainer}>
                 <DefaultInput setter={setCarInfo} id="car" name="Qual o seu carro?" />
+                <DefaultInput setter={setCarInfo} id="carValue" name="Qual o valor do seu carro?" />
                 <DefaultInput setter={setCarInfo} id="year" name="Qual o ano do seu carro?" />
             </View>
 

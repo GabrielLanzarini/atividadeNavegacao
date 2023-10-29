@@ -7,7 +7,7 @@ import { TouchableOpacity } from "react-native";
 import { style } from "./ResultPageStyle";
 
 export function ResultPage({ navigation, route }) {
-    const { car, user, total, ageResult, yearResult } = route.params
+    const { car, user, total, ageResult, yearResult, baseValue } = route.params
 
     const returnPage = () => navigation.goBack()
 
@@ -23,7 +23,7 @@ export function ResultPage({ navigation, route }) {
 
             <View >
                 <View style={style.resultContainerAll}>
-                    <ResultComponent result={"1000"} title={"Base"} />
+                    <ResultComponent result={baseValue} title={"Base"} />
                     <ResultComponent result={ageResult} title={"Por idade"} />
                     <ResultComponent result={yearResult} title={"Por ano"} />
                 </View>
